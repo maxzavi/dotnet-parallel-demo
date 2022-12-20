@@ -2,15 +2,15 @@
 
 Stopwatch stopwatch = new Stopwatch(); 
 stopwatch.Start();
-System.Console.WriteLine("Start");
-
 
 int [] ids = {1,2,3,4,5,6,7,8,9,10,11,12};
-MyProcess myProcess = new MyProcess(); 
-
 string parallelFlag  = Environment.GetEnvironmentVariable("TEST_PARALLEL_FLAG") ?? "F";
 string asyncFlag  = Environment.GetEnvironmentVariable("TEST_ASYNC_FLAG") ?? "F";
-Console.WriteLine($"Parameters: TEST_PARALLEL_FLAG->{parallelFlag} TEST_ASYNC_FLAG->{asyncFlag}");
+int sleepTimeMs  = int.Parse(Environment.GetEnvironmentVariable("SLEEP_TIME_MILISECONDS") ?? "1500");
+Console.WriteLine($"Start: Parameters: TEST_PARALLEL_FLAG->{parallelFlag} TEST_ASYNC_FLAG->{asyncFlag} SLEEP_TIME_MILISECONDS -> {sleepTimeMs}");
+
+MyProcess myProcess = new MyProcess(sleepTimeMs); 
+
 if (asyncFlag.Equals("T",StringComparison.CurrentCultureIgnoreCase)){
     if (parallelFlag.Equals("T",StringComparison.CurrentCultureIgnoreCase)){
         await Parallel.ForEachAsync(ids, async (item,CancellationToken)=>{

@@ -60,6 +60,17 @@ echo $TEST_ASYNC_FLAG
 
 * Switch async/non async in code
 
+* Use flags SLEEP_TIME_MILISECONDS with Environment Variable
+
+Set environment variable (linux)
+
+```cmd
+export SLEEP_TIME_MILISECONDS=1200
+echo $SLEEP_TIME_MILISECONDS
+```
+
+
+
 
 * Add docker file, using extension vscode
 
