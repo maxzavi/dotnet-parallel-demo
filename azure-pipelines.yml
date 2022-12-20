@@ -23,7 +23,9 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'docker_registry'
-        repository: 'mzavaletav/xxxxx'
+        repository: 'mzavaletav/parallel-demo'
         command: 'buildAndPush'
         Dockerfile: 'parallel-proj/Dockerfile'
         buildContext: 
+        addPipelineData: false
+        addBaseImageData: false       
