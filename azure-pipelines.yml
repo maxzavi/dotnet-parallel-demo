@@ -21,9 +21,9 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
-      displayName: Build an image
       inputs:
-        command: build
-        dockerfile: 'parallel-proj/Dockerfile'
-        tags: |
-          $(tag)
+        containerRegistry: 'docker_registry'
+        repository: 'mzavaletav/xxxxx'
+        command: 'buildAndPush'
+        Dockerfile: 'parallel-proj/Dockerfile'
+        buildContext: 
