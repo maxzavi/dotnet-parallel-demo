@@ -69,9 +69,6 @@ export SLEEP_TIME_MILISECONDS=1200
 echo $SLEEP_TIME_MILISECONDS
 ```
 
-
-
-
 * Add docker file, using extension vscode
 
 * Build image with docker build
